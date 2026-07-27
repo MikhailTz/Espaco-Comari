@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* RESET & VARIÁVEIS - ESTILO ESPAÇO COMARI */
+        /* RESET & VARIÁVEIS - ESPAÇO COMARI */
         * {
             margin: 0;
             padding: 0;
@@ -21,9 +21,9 @@
 
         :root {
             --primary: #153c2d; /* Verde escuro sofisticado da logo */
-            --primary-dark: #0c261c; /* Tom mais escuro para hover */
+            --primary-dark: #0c261c;
             --dark: #121212;
-            --light: #f4f7f5; /* Fundo levemente esverdeado pastel */
+            --light: #f4f7f5;
             --white: #ffffff;
             --gray: #666666;
             --border-radius: 8px;
@@ -145,10 +145,13 @@
             cursor: pointer;
         }
 
-        /* HERO SECTION */
+        /* HERO SECTION (TOPO) */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(21, 60, 45, 0.75), rgba(18, 18, 18, 0.85)), url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            /* SE QUISER COLOCAR FOTO NO TOPO, MUDE AQUI (Ex: background-image: url('foto-topo.jpg');) */
+            background: linear-gradient(rgba(21, 60, 45, 0.85), rgba(18, 18, 18, 0.90)); 
+            background-size: cover;
+            background-position: center;
             display: flex;
             align-items: center;
             text-align: center;
@@ -258,10 +261,14 @@
             color: var(--primary);
         }
 
+        /* CAIXA DA FOTO "SOBRE" */
         .img-box {
             width: 100%;
             height: 400px;
-            background: url('https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=800&q=80') no-repeat center center/cover;
+            background-color: #e2e8e5; /* Cor de fundo provisória */
+            /* SE QUISER COLOCAR FOTO AQUI, MUDE AQUI (Ex: background-image: url('foto-sobre.jpg');) */
+            background-size: cover;
+            background-position: center;
             border-radius: var(--border-radius);
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
@@ -352,20 +359,16 @@
         }
 
         .galeria-item {
-            border-radius: var(--border-radius);
+            background-color: #d1dcd5; /* Cor de fundo provisória */
             background-size: cover;
             background-position: center;
+            border-radius: var(--border-radius);
             transition: transform 0.3s;
         }
 
         .galeria-item:hover {
             transform: scale(1.02);
         }
-
-        .item-1 { background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=600&q=80'); }
-        .item-2 { background-image: url('https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=600&q=80'); }
-        .item-3 { background-image: url('https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=600&q=80'); }
-        .item-4 { background-image: url('https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=600&q=80'); }
 
         /* CONTATO */
         .contato-container {
@@ -633,10 +636,10 @@
                 <p>Conheça um pouco do clima aconchegante do Espaço Comari</p>
             </div>
             <div class="galeria-grid">
-                <div class="galeria-item item-1"></div>
-                <div class="galeria-item item-2"></div>
-                <div class="galeria-item item-3"></div>
-                <div class="galeria-item item-4"></div>
+                <div class="galeria-item" style="height: 350px;"></div>
+                <div class="galeria-item" style="height: 350px;"></div>
+                <div class="galeria-item" style="height: 350px;"></div>
+                <div class="galeria-item" style="height: 350px;"></div>
             </div>
         </div>
     </section>
@@ -694,7 +697,6 @@
 
     <!-- SCRIPT DE INTERATIVIDADE -->
     <script>
-        // Menu Mobile Responsivo
         const mobileMenu = document.getElementById('mobile-menu');
         const navLinks = document.querySelector('.nav-links');
 
@@ -702,14 +704,12 @@
             navLinks.classList.toggle('active');
         });
 
-        // Fechar menu ao clicar em um link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
             });
         });
 
-        // Envio do formulário direto para o WhatsApp do Espaço Comari
         const formOrcamento = document.getElementById('formOrcamento');
 
         formOrcamento.addEventListener('submit', function(e) {
