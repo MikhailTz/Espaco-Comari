@@ -13,7 +13,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
-// Envio do formulário direto para o WhatsApp do Salão
+// Envio do formulário direto para o WhatsApp do Espaço Comari
 const formOrcamento = document.getElementById('formOrcamento');
 
 formOrcamento.addEventListener('submit', function(e) {
@@ -24,11 +24,10 @@ formOrcamento.addEventListener('submit', function(e) {
     const tipoEvento = document.getElementById('tipoEvento').value;
     const mensagem = document.getElementById('mensagem').value;
 
-    // Substitua o número abaixo pelo WhatsApp do seu salão (com DDI e DDD)
-    const numeroWhatsApp = "5521999999999"; 
+    const numeroWhatsApp = "5521999923713"; 
 
     const textoFormatado = `Olá! Meu nome é *${nome}*.\n` +
-                           `Gostaria de solicitar um orçamento.\n\n` +
+                           `Gostaria de solicitar um orçamento para o *Espaço Comari*.\n\n` +
                            `*Tipo de Evento:* ${tipoEvento}\n` +
                            `*Telefone de Contato:* ${telefone}\n` +
                            `*Detalhes:* ${mensagem}`;
