@@ -26,6 +26,7 @@
             --light: #f4f7f5;
             --white: #ffffff;
             --gray: #666666;
+            --whatsapp: #25d366;
             --border-radius: 12px;
         }
 
@@ -86,7 +87,7 @@
             width: 100%;
         }
 
-        /* HEADER & NAVBAR */
+        /* HEADER & NAVBAR ROBUSTA */
         header {
             position: fixed;
             top: 0;
@@ -95,20 +96,53 @@
             background: rgba(18, 18, 18, 0.98);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.15);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 85px;
+            height: 90px;
+        }
+
+        /* LOGO PROFISSIONAL NO CABEÇALHO */
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 6px 14px 6px 8px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: background 0.3s;
+        }
+
+        .logo-wrapper:hover {
+            background: rgba(255, 255, 255, 0.07);
         }
 
         .logo-img {
-            height: 50px;
-            width: auto;
+            height: 42px;
+            width: 42px;
             object-fit: contain;
+            background: var(--white);
+            border-radius: 50%;
+            padding: 3px;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            color: var(--white);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-text span {
+            color: #8ab0a1;
         }
 
         .nav-links {
@@ -132,7 +166,7 @@
 
         .btn-nav {
             background-color: var(--primary) !important;
-            padding: 10px 20px !important;
+            padding: 10px 22px !important;
             border-radius: var(--border-radius);
             color: var(--white) !important;
             box-shadow: none !important;
@@ -145,17 +179,17 @@
             cursor: pointer;
         }
 
-        /* HERO SECTION (TOPO) - Puxando da pasta imagens */
+        /* HERO SECTION (TOPO) */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(rgba(21, 60, 45, 0.85), rgba(18, 18, 18, 0.92)), url('imagens/topo.jpg');
+            background: linear-gradient(rgba(21, 60, 45, 0.88), rgba(18, 18, 18, 0.94)), url('imagens/topo.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
             align-items: center;
             text-align: center;
             color: var(--white);
-            padding: 120px 20px 80px 20px;
+            padding: 130px 20px 80px 20px;
         }
 
         .hero-content {
@@ -169,16 +203,25 @@
             justify-content: center;
         }
 
+        .hero-logo-badge {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 18px;
+            border-radius: 50%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         .hero-logo-img {
-            max-width: 160px;
+            max-width: 90px;
             width: 100%;
             height: auto;
-            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
         }
 
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
+            font-size: 3.2rem;
             margin-bottom: 20px;
             line-height: 1.2;
         }
@@ -198,7 +241,7 @@
 
         /* SEÇÕES GERAIS */
         .section {
-            padding: 90px 0;
+            padding: 95px 0;
         }
 
         .bg-light {
@@ -278,7 +321,6 @@
             font-size: 1.15rem;
         }
 
-        /* Imagem sobre puxando da pasta imagens */
         .img-box {
             width: 100%;
             height: 420px;
@@ -382,7 +424,7 @@
             background-position: center;
             border-radius: var(--border-radius);
             height: 320px;
-            transition: transform 0.3s ease, filter 0.3s ease;
+            transition: transform 0.3s ease;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
@@ -485,6 +527,44 @@
             color: var(--white);
         }
 
+        /* BOTÃO FLUTUANTE DO WHATSAPP ROBUSTO */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--whatsapp);
+            color: var(--white);
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            text-decoration: none;
+            animation: pulse-whatsapp 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #1ebe5d;
+        }
+
+        @keyframes pulse-whatsapp {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
         /* RODAPÉ */
         footer {
             background: #0d0d0d;
@@ -525,7 +605,7 @@
                 display: none;
                 flex-direction: column;
                 position: absolute;
-                top: 85px;
+                top: 90px;
                 left: 0;
                 width: 100%;
                 background: rgba(18, 18, 18, 0.98);
@@ -546,7 +626,7 @@
                 padding-top: 110px;
             }
             .hero h1 {
-                font-size: 2.1rem;
+                font-size: 2.2rem;
             }
             .hero p {
                 font-size: 1rem;
@@ -555,7 +635,7 @@
                 font-size: 2rem;
             }
             .section {
-                padding: 60px 0;
+                padding: 65px 0;
             }
             .galeria-grid {
                 grid-template-columns: 1fr;
@@ -563,17 +643,24 @@
             .galeria-item {
                 height: 280px;
             }
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                font-size: 1.8rem;
+                bottom: 20px;
+                right: 20px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- CABEÇALHO -->
+    <!-- CABEÇALHO COM LOGO TRATADA -->
     <header>
         <div class="container nav-container">
-            <!-- Logo oficial puxando da pasta imagens -->
-            <a href="#" class="logo">
+            <a href="#" class="logo-wrapper">
                 <img src="imagens/logo-comari.png" alt="Espaço Comari" class="logo-img">
+                <span class="logo-text">Espaço <span>Comari</span></span>
             </a>
             <nav>
                 <ul class="nav-links">
@@ -591,11 +678,18 @@
         </div>
     </header>
 
+    <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+    <a href="https://wa.me/5521999923713?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20disponibilidade%20do%20Espaço%20Comari." target="_blank" class="whatsapp-float" aria-label="Falar no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <!-- SEÇÃO INÍCIO (HERO) -->
     <section id="inicio" class="hero">
         <div class="hero-content">
             <div class="hero-logo-container">
-                <img src="imagens/logo-comari.png" alt="Logo Espaço Comari" class="hero-logo-img">
+                <div class="hero-logo-badge">
+                    <img src="imagens/logo-comari.png" alt="Logo Espaço Comari" class="hero-logo-img">
+                </div>
             </div>
             <h1>O Lugar Ideal Para Reunir a Família e os Amigos</h1>
             <p>Piscina, área kids e capacidade para até 150 pessoas em Campo Grande. Traga sua festa e comemore do seu jeito!</p>
@@ -679,7 +773,7 @@
         </div>
     </section>
 
-    <!-- GALERIA DE FOTOS - Puxando da pasta imagens -->
+    <!-- GALERIA DE FOTOS -->
     <section id="galeria" class="section bg-light">
         <div class="container">
             <div class="section-title">
