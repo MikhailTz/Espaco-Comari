@@ -465,8 +465,8 @@
         }
 
         .contato-info i {
-            color: var(--primary);
-            font-size: 1.1rem;
+            color: var(--whatsapp);
+            font-size: 1.15rem;
             margin-top: 4px;
         }
 
@@ -579,6 +579,11 @@
             display: flex;
             flex-direction: column;
             gap: 8px;
+        }
+
+        .footer-content p span {
+            color: #b0b0b0;
+            font-weight: 500;
         }
 
         /* RESPONSIVIDADE OTIMIZADA PARA DISPOSITIVOS MÓVEIS */
@@ -764,10 +769,10 @@
                 </div>
                 <div class="card valor-card destaque">
                     <div class="tag-destaque">Mais Procurado</div>
-                    <h3>Sexta a Domingo</h3>
+                    <h3>Sexta, Domingo e Feriados</h3>
                     <div class="preco">R$ 800<span>,00</span></div>
                     <p>Ideal para grandes festas, churrascos e finais de semana em família.</p>
-                    <a href="https://wa.me/5521999923713?text=Olá!%20Gostaria%20de%20reservar%20o%20Espaço%20Comari%20para%20o%20fim%20de%20semana." target="_blank" class="btn btn-primary full-width">Reservar Data</a>
+                    <a href="https://wa.me/5521999923713?text=Olá!%20Gostaria%20de%20reservar%20o%20Espaço%20Comari%20para%20o%20fim%20de%20semana%20ou%20feriado." target="_blank" class="btn btn-primary full-width">Reservar Data</a>
                 </div>
             </div>
         </div>
@@ -800,11 +805,11 @@
                 <div class="contato-info">
                     <h3>Localização & Contato</h3>
                     <p><i class="fas fa-map-marker-alt"></i> Praça Major Vieira de Melo, Nº 20 - Campo Grande, RJ (Próximo à Clínica da Família da Praça do Comari)</p>
-                    <p><i class="fas fa-phone-alt"></i> (21) 99992-3713</p>
+                    <p><i class="fab fa-whatsapp"></i> (21) 99992-3713</p>
                     <p><i class="fas fa-clock"></i> Horário de uso: 9h às 21h</p>
                     <div class="social-icons">
-                        <a href="https://wa.me/5521999923713" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5521999923713" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <form class="contato-form" id="formOrcamento">
@@ -837,6 +842,7 @@
         <div class="container footer-content">
             <p>&copy; 2026 Espaço Comari. Todos os direitos reservados.</p>
             <p>Praça Major Vieira de Melo, Nº 20 - Campo Grande, Rio de Janeiro - RJ</p>
+            <p>Desenvolvido por <span>Mikhail Ayache</span></p>
         </div>
     </footer>
 
