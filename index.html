@@ -26,13 +26,14 @@
             --light: #f4f7f5;
             --white: #ffffff;
             --gray: #666666;
-            --border-radius: 8px;
+            --border-radius: 12px;
         }
 
         body {
             background-color: var(--white);
             color: var(--dark);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .container {
@@ -43,8 +44,11 @@
 
         /* BOTÕES */
         .btn {
-            display: inline-block;
-            padding: 12px 28px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 28px;
             border-radius: var(--border-radius);
             font-weight: 500;
             text-decoration: none;
@@ -52,15 +56,18 @@
             cursor: pointer;
             border: none;
             text-align: center;
+            font-size: 1rem;
         }
 
         .btn-primary {
             background-color: var(--primary);
             color: var(--white);
+            box-shadow: 0 4px 15px rgba(21, 60, 45, 0.3);
         }
 
         .btn-primary:hover {
             background-color: var(--primary-dark);
+            transform: translateY(-2px);
         }
 
         .btn-secondary {
@@ -72,44 +79,36 @@
         .btn-secondary:hover {
             background-color: var(--white);
             color: var(--dark);
+            transform: translateY(-2px);
         }
 
         .full-width {
             width: 100%;
         }
 
-        /* HEADER */
+        /* HEADER & NAVBAR */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(18, 18, 18, 0.95);
-            backdrop-filter: blur(5px);
+            background: rgba(18, 18, 18, 0.98);
+            backdrop-filter: blur(10px);
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.15);
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 80px;
+            height: 85px;
         }
 
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 700;
-        }
-
-        .logo span {
-            color: var(--primary);
-            background: #ffffff;
-            padding: 0 6px;
-            border-radius: 4px;
+        .logo-img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
         }
 
         .nav-links {
@@ -133,35 +132,48 @@
 
         .btn-nav {
             background-color: var(--primary) !important;
-            padding: 10px 18px;
+            padding: 10px 20px !important;
             border-radius: var(--border-radius);
             color: var(--white) !important;
+            box-shadow: none !important;
         }
 
         .menu-toggle {
             display: none;
             color: var(--white);
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             cursor: pointer;
         }
 
         /* HERO SECTION (TOPO) */
         .hero {
-            height: 100vh;
-            /* SE QUISER COLOCAR FOTO NO TOPO, MUDE AQUI (Ex: background-image: url('foto-topo.jpg');) */
-            background: linear-gradient(rgba(21, 60, 45, 0.85), rgba(18, 18, 18, 0.90)); 
+            min-height: 100vh;
+            background: linear-gradient(rgba(21, 60, 45, 0.85), rgba(18, 18, 18, 0.92)), url('topo.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
             align-items: center;
             text-align: center;
             color: var(--white);
-            padding: 0 20px;
+            padding: 120px 20px 80px 20px;
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
+        }
+
+        .hero-logo-container {
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-logo-img {
+            max-width: 160px;
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
         }
 
         .hero h1 {
@@ -173,7 +185,7 @@
 
         .hero p {
             font-size: 1.15rem;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             color: #e2e8e5;
         }
 
@@ -201,6 +213,7 @@
         .section-title {
             text-align: center;
             margin-bottom: 50px;
+            padding: 0 15px;
         }
 
         .section-title h2 {
@@ -226,7 +239,7 @@
         /* SOBRE */
         .grid-2 {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.1fr 0.9fr;
             gap: 50px;
             align-items: center;
         }
@@ -236,6 +249,7 @@
             font-size: 2.2rem;
             margin-bottom: 20px;
             color: var(--primary);
+            line-height: 1.3;
         }
 
         .sobre-texto p {
@@ -247,51 +261,54 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 14px;
+            margin-top: 25px;
         }
 
         .features-list li {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             font-weight: 500;
+            color: var(--dark);
         }
 
         .features-list i {
             color: var(--primary);
+            font-size: 1.15rem;
         }
 
-        /* CAIXA DA FOTO "SOBRE" */
         .img-box {
             width: 100%;
-            height: 400px;
-            background-color: #e2e8e5; /* Cor de fundo provisória */
-            /* SE QUISER COLOCAR FOTO AQUI, MUDE AQUI (Ex: background-image: url('foto-sobre.jpg');) */
+            height: 420px;
+            background-color: #dce4e0;
+            background-image: url('sobre.jpg');
             background-size: cover;
             background-position: center;
             border-radius: var(--border-radius);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
 
         /* CARDS E VALORES */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
 
         .card {
             background: var(--white);
-            padding: 40px 30px;
+            padding: 45px 30px;
             border-radius: var(--border-radius);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
             text-align: center;
-            transition: transform 0.3s ease;
-            border-top: 4px solid var(--primary);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid var(--primary);
         }
 
         .card:hover {
             transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
         }
 
         .card-icon {
@@ -301,7 +318,7 @@
         }
 
         .card h3 {
-            font-size: 1.3rem;
+            font-size: 1.35rem;
             margin-bottom: 15px;
             color: var(--dark);
         }
@@ -333,21 +350,22 @@
 
         .destaque {
             border: 2px solid var(--primary);
-            background: #fdfdfd;
+            background: #fafbf9;
         }
 
         .tag-destaque {
             position: absolute;
-            top: -12px;
+            top: -14px;
             left: 50%;
             transform: translateX(-50%);
             background: var(--primary);
             color: var(--white);
-            padding: 4px 15px;
+            padding: 5px 18px;
             font-size: 0.75rem;
             font-weight: 600;
             border-radius: 20px;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         /* GALERIA */
@@ -355,19 +373,20 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
-            height: 350px;
         }
 
         .galeria-item {
-            background-color: #d1dcd5; /* Cor de fundo provisória */
+            background-color: #dce4e0;
             background-size: cover;
             background-position: center;
             border-radius: var(--border-radius);
-            transition: transform 0.3s;
+            height: 320px;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
         .galeria-item:hover {
-            transform: scale(1.02);
+            transform: scale(1.03);
         }
 
         /* CONTATO */
@@ -383,12 +402,14 @@
             padding: 50px;
             border-radius: var(--border-radius);
             border: 1px solid #2a2a2a;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
 
         .contato-info h3 {
             margin-bottom: 20px;
             font-size: 1.4rem;
             color: var(--white);
+            font-family: 'Playfair Display', serif;
         }
 
         .contato-info p {
@@ -409,24 +430,26 @@
         .social-icons {
             display: flex;
             gap: 15px;
-            margin-top: 25px;
+            margin-top: 30px;
         }
 
         .social-icons a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             background: rgba(255,255,255,0.05);
             color: var(--white);
             border-radius: 50%;
             text-decoration: none;
             transition: 0.3s;
+            border: 1px solid #333;
         }
 
         .social-icons a:hover {
             background: var(--primary);
+            border-color: var(--primary);
         }
 
         .contato-form {
@@ -439,20 +462,21 @@
         .form-group select, 
         .form-group textarea {
             width: 100%;
-            padding: 12px 15px;
-            background: rgba(255,255,255,0.05);
+            padding: 14px 18px;
+            background: rgba(255,255,255,0.04);
             border: 1px solid #333;
             border-radius: var(--border-radius);
             color: var(--white);
             font-size: 0.95rem;
             outline: none;
-            transition: border-color 0.3s;
+            transition: border-color 0.3s, background 0.3s;
         }
 
         .form-group input:focus, 
         .form-group select:focus, 
         .form-group textarea:focus {
             border-color: var(--primary);
+            background: rgba(255,255,255,0.07);
         }
 
         .form-group select option {
@@ -464,35 +488,34 @@
         footer {
             background: #0d0d0d;
             color: #888;
-            padding: 30px 0;
+            padding: 40px 0;
             text-align: center;
             font-size: 0.9rem;
+            border-top: 1px solid #1a1a1a;
         }
 
         .footer-content {
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            gap: 8px;
         }
 
-        /* RESPONSIVIDADE */
-        @media(max-width: 900px) {
+        /* RESPONSIVIDADE OTIMIZADA PARA DISPOSITIVOS MÓVEIS */
+        @media(max-width: 992px) {
             .grid-2 {
                 grid-template-columns: 1fr;
+                gap: 30px;
             }
             .img-box {
-                height: 300px;
+                height: 320px;
             }
             .galeria-grid {
-                grid-template-columns: 1fr 1fr;
-                height: auto;
-            }
-            .galeria-item {
-                height: 200px;
+                grid-template-columns: repeat(2, 1fr);
             }
             .contato-box {
                 grid-template-columns: 1fr;
-                padding: 30px 20px;
+                padding: 35px 25px;
+                gap: 30px;
             }
         }
 
@@ -501,13 +524,16 @@
                 display: none;
                 flex-direction: column;
                 position: absolute;
-                top: 80px;
+                top: 85px;
                 left: 0;
                 width: 100%;
-                background: var(--dark);
-                padding: 20px 0;
+                background: rgba(18, 18, 18, 0.98);
+                backdrop-filter: blur(10px);
+                padding: 25px 0;
                 text-align: center;
-                box-shadow: 0 10px 10px rgba(0,0,0,0.2);
+                box-shadow: 0 15px 20px rgba(0,0,0,0.3);
+                border-bottom: 1px solid #222;
+                gap: 20px;
             }
             .nav-links.active {
                 display: flex;
@@ -515,8 +541,26 @@
             .menu-toggle {
                 display: block;
             }
+            .hero {
+                padding-top: 110px;
+            }
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2.1rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            .section {
+                padding: 60px 0;
+            }
+            .galeria-grid {
+                grid-template-columns: 1fr;
+            }
+            .galeria-item {
+                height: 280px;
             }
         }
     </style>
@@ -526,7 +570,10 @@
     <!-- CABEÇALHO -->
     <header>
         <div class="container nav-container">
-            <a href="#" class="logo"><span>Espaço</span> Comari</a>
+            <!-- Logo oficial no topo -->
+            <a href="#" class="logo">
+                <img src="logo-comari.png" alt="Espaço Comari" class="logo-img">
+            </a>
             <nav>
                 <ul class="nav-links">
                     <li><a href="#inicio">Início</a></li>
@@ -546,6 +593,9 @@
     <!-- SEÇÃO INÍCIO (HERO) -->
     <section id="inicio" class="hero">
         <div class="hero-content">
+            <div class="hero-logo-container">
+                <img src="logo-comari.png" alt="Logo Espaço Comari" class="hero-logo-img">
+            </div>
             <h1>O Lugar Ideal Para Reunir a Família e os Amigos</h1>
             <p>Piscina, área kids e capacidade para até 150 pessoas em Campo Grande. Traga sua festa e comemore do seu jeito!</p>
             <div class="hero-buttons">
@@ -636,10 +686,10 @@
                 <p>Conheça um pouco do clima aconchegante do Espaço Comari</p>
             </div>
             <div class="galeria-grid">
-                <div class="galeria-item" style="height: 350px;"></div>
-                <div class="galeria-item" style="height: 350px;"></div>
-                <div class="galeria-item" style="height: 350px;"></div>
-                <div class="galeria-item" style="height: 350px;"></div>
+                <div class="galeria-item" style="background-image: url('foto1.jpg');"></div>
+                <div class="galeria-item" style="background-image: url('foto2.jpg');"></div>
+                <div class="galeria-item" style="background-image: url('foto3.jpg');"></div>
+                <div class="galeria-item" style="background-image: url('foto4.jpg');"></div>
             </div>
         </div>
     </section>
@@ -690,7 +740,8 @@
     <!-- RODAPÉ -->
     <footer>
         <div class="container footer-content">
-            <p>&copy; 2026 Espaço Comari. Todos os direitos reservados. Desenvolvido por Mikhail Ayache.</p>
+            <p>&copy; 2026 Espaço Comari. Todos os direitos reservados.</p>
+            <p>Praça Major Vieira de Melo, Nº 20 - Campo Grande, Rio de Janeiro - RJ</p>
         </div>
     </footer>
 
