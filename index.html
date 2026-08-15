@@ -327,6 +327,34 @@
             font-size: 1.15rem;
         }
 
+        #sobre {
+            padding-top: 155px;
+        }
+
+        .sobre-acoes {
+            display: flex;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .sobre-acoes .btn {
+            flex: 1;
+            padding-left: 18px;
+            padding-right: 18px;
+        }
+
+        .btn-outline-primary {
+            color: var(--primary);
+            background: transparent;
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline-primary:hover {
+            color: var(--white);
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+
         .img-box {
             display: block;
             width: 100%;
@@ -831,6 +859,16 @@
                 margin-left: auto;
                 margin-right: auto;
             }
+            #sobre {
+                padding-top: 125px;
+            }
+            .sobre-acoes {
+                flex-direction: row;
+            }
+            .sobre-acoes .btn {
+                padding: 13px 10px;
+                font-size: 0.86rem;
+            }
             .whatsapp-float {
                 width: 55px;
                 height: 55px;
@@ -852,7 +890,7 @@
             </a>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Início</a></li>
                     <li><a href="#sobre">O Espaço</a></li>
                     <li><a href="#espacos">Estrutura</a></li>
                     <li><a href="#valores">Valores</a></li>
@@ -873,25 +911,6 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- SEÇÃO INÍCIO (HERO) -->
-    <section id="inicio" class="hero">
-        <div class="hero-content">
-            <div class="hero-logo-container">
-                <div class="hero-logo-badge">
-                    <img src="imagens/logo-comari.png" alt="Logo Espaço Comari" class="hero-logo-img" width="90" height="90" decoding="async" fetchpriority="high">
-                </div>
-            </div>
-            <h1>O Lugar Ideal Para Reunir a Família e os Amigos</h1>
-            <p>Piscina, área kids e capacidade para até 150 pessoas em Campo Grande.</p>
-            <div class="hero-buttons">
-                <a href="https://wa.me/5521999923713?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20disponibilidade%20do%20Espaço%20Comari." target="_blank" class="btn btn-primary">
-                    <i class="fab fa-whatsapp"></i> Falar no WhatsApp
-                </a>
-                <a href="#valores" class="btn btn-secondary">Ver Valores</a>
-            </div>
-        </div>
-    </section>
-
     <!-- SOBRE O ESPAÇO -->
     <section id="sobre" class="section">
         <div class="container grid-2">
@@ -903,6 +922,12 @@
                     <li><i class="fas fa-check-circle"></i> Horário amplo: das 9h às 21h</li>
                     <li><i class="fas fa-check-circle"></i> Localização: Campo Grande (Próximo à Praça do Comari)</li>
                 </ul>
+                <div class="sobre-acoes">
+                    <a href="https://wa.me/5521999923713?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20disponibilidade%20do%20Espaço%20Comari." target="_blank" class="btn btn-primary" rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+                    </a>
+                    <a href="#valores" class="btn btn-outline-primary">Ver Valores</a>
+                </div>
             </div>
             <div class="sobre-img">
                 <img src="imagens/sobre.jpg" alt="Área do Espaço Comari" class="img-box" loading="lazy" decoding="async">
