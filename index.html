@@ -981,11 +981,9 @@
     <section id="video" class="section video-destaque">
         <div class="container video-container">
             <div class="video-moldura">
-                <video controls playsinline preload="none" poster="imagens/topo.jpg">
-                    <source src="videos/video-espaco-comari.mp4" type="video/mp4">
+                <video controls playsinline preload="metadata" onloadedmetadata="if (this.currentTime === 0) this.currentTime = 0.1;">
                     <source src="imagens/video-espaco-comari.mp4" type="video/mp4">
                     Seu navegador não conseguiu reproduzir o vídeo.
-                    <a href="videos/video-espaco-comari.mp4">Clique aqui para assistir.</a>
                     <a href="imagens/video-espaco-comari.mp4">Clique aqui para assistir.</a>
                 </video>
             </div>
