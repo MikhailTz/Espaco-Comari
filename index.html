@@ -432,6 +432,127 @@
             transform: scale(1.03);
         }
 
+        /* VÍDEO DO ESPAÇO */
+        .video-destaque {
+            background: linear-gradient(135deg, var(--primary-dark), #07130e);
+            color: var(--white);
+        }
+
+        .video-container {
+            display: grid;
+            grid-template-columns: minmax(280px, 390px) 1fr;
+            align-items: center;
+            gap: 70px;
+            max-width: 1000px;
+        }
+
+        .video-moldura {
+            position: relative;
+            padding: 10px;
+            background: #080808;
+            border: 1px solid rgba(255,255,255,0.16);
+            border-radius: 28px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.45);
+        }
+
+        .video-moldura video {
+            display: block;
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            object-fit: cover;
+            background: #000;
+            border-radius: 20px;
+        }
+
+        .video-texto .video-etiqueta {
+            display: inline-block;
+            margin-bottom: 16px;
+            padding: 7px 14px;
+            color: #d8eee5;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.14);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+        }
+
+        .video-texto h2 {
+            margin-bottom: 18px;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6rem;
+            line-height: 1.2;
+        }
+
+        .video-texto p {
+            max-width: 520px;
+            margin-bottom: 28px;
+            color: #c3cec9;
+            font-size: 1.05rem;
+        }
+
+        /* PERGUNTAS FREQUENTES */
+        .faq-container {
+            max-width: 900px;
+        }
+
+        .faq-lista {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .faq-item {
+            overflow: hidden;
+            background: var(--white);
+            border: 1px solid #dce4e0;
+            border-left: 4px solid var(--primary);
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .faq-item:hover,
+        .faq-item[open] {
+            box-shadow: 0 10px 25px rgba(21,60,45,0.10);
+            transform: translateY(-2px);
+        }
+
+        .faq-item summary {
+            position: relative;
+            padding: 20px 55px 20px 22px;
+            color: var(--primary-dark);
+            font-weight: 600;
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            content: '+';
+            position: absolute;
+            top: 50%;
+            right: 22px;
+            color: var(--primary);
+            font-size: 1.6rem;
+            font-weight: 400;
+            transform: translateY(-50%);
+        }
+
+        .faq-item[open] summary::after {
+            content: '−';
+        }
+
+        .faq-item p {
+            padding: 0 55px 22px 22px;
+            color: var(--gray);
+            line-height: 1.75;
+        }
+
         /* CONTATO */
         .contato-container {
             max-width: 1000px;
@@ -455,6 +576,11 @@
             font-family: 'Playfair Display', serif;
         }
 
+        .contato-info {
+            display: flex;
+            flex-direction: column;
+        }
+
         .contato-info p {
             display: flex;
             align-items: flex-start;
@@ -470,35 +596,61 @@
             margin-top: 4px;
         }
 
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
+        .mapa-localizacao {
+            width: 100%;
+            max-width: 420px;
+            margin: 20px auto 0;
+            overflow: hidden;
+            border: 1px solid #333;
+            border-radius: var(--border-radius);
+            background: #111;
         }
 
-        .social-icons a {
+        .mapa-localizacao iframe {
+            display: block;
+            width: 100%;
+            height: 170px;
+            border: 0;
+        }
+
+        .mapa-link {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 45px;
-            height: 45px;
-            background: rgba(255,255,255,0.05);
+            gap: 10px;
+            padding: 13px 16px;
             color: var(--white);
-            border-radius: 50%;
+            background: var(--primary);
+            font-weight: 500;
             text-decoration: none;
-            transition: 0.3s;
-            border: 1px solid #333;
+            transition: background 0.3s ease;
         }
 
-        .social-icons a:hover {
-            background: var(--primary);
-            border-color: var(--primary);
+        .mapa-link:hover {
+            background: var(--primary-dark);
+        }
+
+        .mapa-link i {
+            color: var(--white);
+            margin: 0;
         }
 
         .contato-form {
             display: flex;
             flex-direction: column;
             gap: 15px;
+            align-self: stretch;
+        }
+
+        .contato-form .form-group:last-of-type {
+            display: flex;
+            flex: 1;
+            min-height: 110px;
+        }
+
+        .contato-form .form-group:last-of-type textarea {
+            height: 100%;
+            resize: vertical;
         }
 
         .form-group input, 
@@ -581,9 +733,14 @@
             gap: 8px;
         }
 
-        .footer-content p span {
+        .footer-content p span,
+        .footer-content p a {
             color: #b0b0b0;
             font-weight: 500;
+        }
+
+        .footer-content p a:hover {
+            color: var(--white);
         }
 
         /* RESPONSIVIDADE OTIMIZADA PARA DISPOSITIVOS MÓVEIS */
@@ -602,6 +759,10 @@
                 grid-template-columns: 1fr;
                 padding: 35px 25px;
                 gap: 30px;
+            }
+            .video-container {
+                grid-template-columns: minmax(260px, 350px) 1fr;
+                gap: 40px;
             }
         }
 
@@ -648,6 +809,22 @@
             .galeria-item {
                 height: 280px;
             }
+            .video-container {
+                grid-template-columns: 1fr;
+                max-width: 390px;
+                gap: 40px;
+                text-align: center;
+            }
+            .video-texto {
+                order: -1;
+            }
+            .video-texto h2 {
+                font-size: 2rem;
+            }
+            .video-texto p {
+                margin-left: auto;
+                margin-right: auto;
+            }
             .whatsapp-float {
                 width: 55px;
                 height: 55px;
@@ -674,6 +851,8 @@
                     <li><a href="#espacos">Estrutura</a></li>
                     <li><a href="#valores">Valores</a></li>
                     <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="#video">Vídeo</a></li>
+                    <li><a href="#faq">Dúvidas</a></li>
                     <li><a href="#contato" class="btn-nav">Orçamento</a></li>
                 </ul>
             </nav>
@@ -711,7 +890,7 @@
     <section id="sobre" class="section">
         <div class="container grid-2">
             <div class="sobre-texto">
-                <h2>Seu Evento Com Liberdade e Conforto</h2>
+                <h2>Salão de Festas em Campo Grande, RJ</h2>
                 <p>Se você está procurando um lugar espaçoso, bem localizado e com preço justo para fazer seu aniversário, churrasco ou festa infantil, acabou de encontrar. Aqui você aluga o espaço e fica totalmente livre para trazer sua própria decoração, comida e bebida do seu jeito.</p>
                 <ul class="features-list">
                     <li><i class="fas fa-check-circle"></i> Capacidade para até 150 convidados</li>
@@ -730,7 +909,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>O Que Já Está Incluso</h2>
-                <p>Tudo estruturado para garantir a diversão e o conforto dos seus convidados</p>
+                <p>Você não precisa se preocupar em procurar mesas, cadeiras ou brinquedos: tudo isso já está incluído na locação do espaço.</p>
             </div>
             <div class="cards-grid">
                 <div class="card">
@@ -781,7 +960,7 @@
     <section id="galeria" class="section bg-light">
         <div class="container">
             <div class="section-title">
-                <h2>Galeria de Momentos</h2>
+                <h2>Algumas Fotos do Espaço</h2>
                 <p>Conheça um pouco do clima aconchegante do Espaço Comari</p>
             </div>
             <div class="galeria-grid">
@@ -789,6 +968,53 @@
                 <div class="galeria-item" style="background-image: url('imagens/foto2.jpg');"></div>
                 <div class="galeria-item" style="background-image: url('imagens/foto3.jpg');"></div>
                 <div class="galeria-item" style="background-image: url('imagens/foto4.jpg');"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VÍDEO DE APRESENTAÇÃO -->
+    <section id="video" class="section video-destaque">
+        <div class="container video-container">
+            <div class="video-moldura">
+                <video controls playsinline preload="metadata" poster="imagens/topo.jpg">
+                    <source src="videos/video-espaco-comari.mp4" type="video/mp4">
+                    Seu navegador não conseguiu reproduzir o vídeo.
+                    <a href="videos/video-espaco-comari.mp4">Clique aqui para assistir.</a>
+                </video>
+            </div>
+            <div class="video-texto">
+                <span class="video-etiqueta"><i class="fas fa-play"></i> Conheça o espaço</span>
+                <h2>Veja de perto onde sua comemoração pode acontecer</h2>
+                <p>Assista ao vídeo e conheça os ambientes, a estrutura e todos os detalhes que fazem do Espaço Comari o lugar ideal para celebrar momentos especiais.</p>
+                <a href="#contato" class="btn btn-primary">Consultar uma data</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PERGUNTAS FREQUENTES -->
+    <section id="faq" class="section">
+        <div class="container faq-container">
+            <div class="section-title">
+                <h2>Perguntas Frequentes</h2>
+                <p>Tire suas principais dúvidas antes de reservar o Espaço Comari</p>
+            </div>
+            <div class="faq-lista">
+                <details class="faq-item">
+                    <summary>O espaço disponibiliza equipamento de som?</summary>
+                    <p>Sim. O salão disponibiliza uma caixa de som para uso durante o evento.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Quais equipamentos estão disponíveis na cozinha?</summary>
+                    <p>A cozinha conta com geladeira e fogão com forno, oferecendo a estrutura necessária para o preparo e a conservação dos alimentos.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>O botijão de gás está incluído na locação?</summary>
+                    <p>Não. Para utilizar o fogão e o forno, o responsável pelo evento deverá levar um botijão de gás compatível.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Há geladeiras e freezer para alimentos e bebidas?</summary>
+                    <p>O espaço possui duas geladeiras para conservar os alimentos. Também há um freezer utilizado como cooler para as bebidas; nesse caso, o responsável pelo evento deverá levar o gelo.</p>
+                </details>
             </div>
         </div>
     </section>
@@ -806,9 +1032,17 @@
                     <p><i class="fas fa-map-marker-alt"></i> Praça Major Vieira de Melo, Nº 20 - Campo Grande, RJ (Próximo à Clínica da Família da Praça do Comari)</p>
                     <p><i class="fab fa-whatsapp"></i> (21) 99992-3713</p>
                     <p><i class="fas fa-clock"></i> Horário de uso: 9h às 21h</p>
-                    <div class="social-icons">
-                        <a href="https://wa.me/5521999923713" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <div class="mapa-localizacao">
+                        <iframe
+                            src="https://www.google.com/maps?q=Pra%C3%A7a%20Major%20Vieira%20de%20Melo%2C%2020%2C%20Campo%20Grande%2C%20Rio%20de%20Janeiro%2C%20RJ&output=embed"
+                            title="Mapa da localização do Espaço Comari"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            allowfullscreen>
+                        </iframe>
+                        <a class="mapa-link" href="https://www.google.com/maps/search/?api=1&query=Pra%C3%A7a%20Major%20Vieira%20de%20Melo%2C%2020%2C%20Campo%20Grande%2C%20Rio%20de%20Janeiro%2C%20RJ" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-map-location-dot"></i> Abrir no Google Maps
+                        </a>
                     </div>
                 </div>
                 <form class="contato-form" id="formOrcamento">
@@ -841,7 +1075,7 @@
         <div class="container footer-content">
             <p>&copy; 2026 Espaço Comari. Todos os direitos reservados.</p>
             <p>Praça Major Vieira de Melo, Nº 20 - Campo Grande, Rio de Janeiro - RJ</p>
-            <p>Desenvolvido por <span>Mikhail Ayache</span></p>
+            <p>Desenvolvido por <a href="https://aiexbrasil.com.br/" target="_blank" rel="noopener noreferrer">AIEX</a></p>
         </div>
     </footer>
 
