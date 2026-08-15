@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Espaço Comari | Salão de Festas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preload" as="image" href="imagens/topo.jpg" fetchpriority="high">
+    <link rel="preload" as="image" href="imagens/logo-comari.png">
     <!-- Ícones (FontAwesome) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
@@ -322,12 +327,11 @@
         }
 
         .img-box {
+            display: block;
             width: 100%;
             height: 420px;
             background-color: #dce4e0;
-            background-image: url('imagens/sobre.jpg');
-            background-size: cover;
-            background-position: center;
+            object-fit: cover;
             border-radius: var(--border-radius);
             box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
@@ -419,9 +423,10 @@
         }
 
         .galeria-item {
+            display: block;
+            width: 100%;
             background-color: #dce4e0;
-            background-size: cover;
-            background-position: center;
+            object-fit: cover;
             border-radius: var(--border-radius);
             height: 320px;
             transition: transform 0.3s ease;
@@ -841,7 +846,7 @@
     <header>
         <div class="container nav-container">
             <a href="#" class="logo-wrapper">
-                <img src="imagens/logo-comari.png" alt="Espaço Comari" class="logo-img">
+                <img src="imagens/logo-comari.png" alt="Espaço Comari" class="logo-img" width="42" height="42" decoding="async" fetchpriority="high">
                 <span class="logo-text">Espaço <span>Comari</span></span>
             </a>
             <nav>
@@ -872,7 +877,7 @@
         <div class="hero-content">
             <div class="hero-logo-container">
                 <div class="hero-logo-badge">
-                    <img src="imagens/logo-comari.png" alt="Logo Espaço Comari" class="hero-logo-img">
+                    <img src="imagens/logo-comari.png" alt="Logo Espaço Comari" class="hero-logo-img" width="90" height="90" decoding="async" fetchpriority="high">
                 </div>
             </div>
             <h1>O Lugar Ideal Para Reunir a Família e os Amigos</h1>
@@ -899,7 +904,7 @@
                 </ul>
             </div>
             <div class="sobre-img">
-                <div class="img-box"></div>
+                <img src="imagens/sobre.jpg" alt="Área do Espaço Comari" class="img-box" loading="lazy" decoding="async">
             </div>
         </div>
     </section>
@@ -964,10 +969,10 @@
                 <p>Conheça um pouco do clima aconchegante do Espaço Comari</p>
             </div>
             <div class="galeria-grid">
-                <div class="galeria-item" style="background-image: url('imagens/foto1.jpg');"></div>
-                <div class="galeria-item" style="background-image: url('imagens/foto2.jpg');"></div>
-                <div class="galeria-item" style="background-image: url('imagens/foto3.jpg');"></div>
-                <div class="galeria-item" style="background-image: url('imagens/foto4.jpg');"></div>
+                <img src="imagens/foto1.jpg" alt="Foto do Espaço Comari 1" class="galeria-item" loading="lazy" decoding="async">
+                <img src="imagens/foto2.jpg" alt="Foto do Espaço Comari 2" class="galeria-item" loading="lazy" decoding="async">
+                <img src="imagens/foto3.jpg" alt="Foto do Espaço Comari 3" class="galeria-item" loading="lazy" decoding="async">
+                <img src="imagens/foto4.jpg" alt="Foto do Espaço Comari 4" class="galeria-item" loading="lazy" decoding="async">
             </div>
         </div>
     </section>
@@ -976,7 +981,7 @@
     <section id="video" class="section video-destaque">
         <div class="container video-container">
             <div class="video-moldura">
-                <video controls playsinline preload="metadata" poster="imagens/topo.jpg">
+                <video controls playsinline preload="none" poster="imagens/topo.jpg">
                     <source src="videos/video-espaco-comari.mp4" type="video/mp4">
                     Seu navegador não conseguiu reproduzir o vídeo.
                     <a href="videos/video-espaco-comari.mp4">Clique aqui para assistir.</a>
